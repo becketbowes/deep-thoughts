@@ -1,30 +1,41 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
 
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_USER } from '../utils/queries';
+
+
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(QUERY_USER, {
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
-  const user = data?.user || {};
+  const user = data?.user || data?.user || {};
+
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Navigate to="/profile" />
+  }
 
   if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (!user?.username) {
+    return (<h4>You eed to be logged in to see this page.</h4>)
   }
 
   return (
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {user.username}'s profile.
+          Viewing {userParam ? `${user.username}'s` : 'your'}'s profile.
         </h2>
       </div>
 
