@@ -27,7 +27,7 @@ const Home = () => {
           ) : (
             <ThoughtList
               thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
+              title="The answer is obvious; the question is not."
             />
           )}
         </div>
