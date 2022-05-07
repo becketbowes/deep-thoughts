@@ -1,10 +1,10 @@
 :root {
-  --primary: #497573;
-  --secondary: #99f7f2;
-  --tertiary: #b2c2c1;
-  --quatrinary: #cadbda;
+  --primary: #2c2d44;
+  --secondary: #99a7f7;
+  --tertiary: #b2b8c2;
+  --quatrinary: #cacfdb;
   --light: #e1f5f4;
-  --dark: #6c7575;
+  --dark: #6c6f75;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -29,7 +29,7 @@ body {
   font-family: 'Inconsolata', monospace;
   font-weight: 400;
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--dark);
   background-color: #f3fffee1;
 }
@@ -47,23 +47,23 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
   font-size: 1.5rem;
 }
 
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 h6 {
@@ -71,7 +71,7 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: .9rem;
   margin-top: 0;
 }
 
@@ -104,12 +104,12 @@ nav a:hover {
   text-align: center;
   width: 100%;
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 .btn,
 .pill {
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
   margin: 5px 0;
@@ -155,7 +155,7 @@ nav a:hover {
 
 .card-body {
   padding: 2.5%;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 /* FORM */
@@ -166,7 +166,7 @@ nav a:hover {
 }
 
 .form-label {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0.625rem 0 0.25rem;
 }
 
@@ -174,7 +174,7 @@ nav a:hover {
   width: 100%;
   padding: 0.75rem;
   margin: 0.2rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
